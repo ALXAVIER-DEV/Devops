@@ -17,14 +17,14 @@ resource "aws_instance" "app_server" {
   ami           = "ami-008fe2fc65df48dac"
   instance_type = "t2.micro"
   key_name = "iac-ale"
-  user_data = <<-EOF
-              #!/bin/bash
-              cd /home/ubuntu
-              echo "<h1>Made with Terraform</h1>" index.html
-              nohup busybox httpd -f -p 8080 &
-              EOF
+  # user_data = <<-EOF
+  #             #!/bin/bash
+  #             cd /home/ubuntu
+  #             echo "<h1>Made with Terraform</h1>" index.html
+  #             nohup busybox httpd -f -p 8080 &
+  #             EOF
  
   tags = {
-    Name = "AleAwsIacInstance_"
+    Name = "AleAwsIacInstance"
   }
 }
