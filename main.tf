@@ -20,11 +20,11 @@ resource "aws_instance" "app_server" {
   user_data = <<-EOF
               #!/bin/bash
               cd /home/ubuntu
-              echo "Made with Terraform" > index.html
+              echo "<h1>Made with Terraform</h1>" index.html
               nohup busybox httpd -f -p 8080 &
               EOF
  
   tags = {
-    Name = "AwsIacInstance"
+    Name = "AleAwsIacInstance"
   }
 }
